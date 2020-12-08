@@ -1,0 +1,27 @@
+- name: Install httpd package
+  yum:
+    name: httpd
+    state: installed
+  when: ansible_os_family == "RedHat"
+  tags: install_httpd
+
+- name: Start httpd service
+  service:
+    name: httpd
+    state: started 
+  when: ansible_os_family == "RedHat"
+  tags: start_httpd
+
+- name: Change default port to {{ custom_port }}
+  lineinfile:
+    path: /etc/httpd/conf/httpd.conf
+    regexp: '^Listen'
+    insertafter: '^#Listen'
+    line: Listen {{ custom_port }}
+  when: ansible_os_family == "RedHat"
+
+- name: restart apache
+  service:
+    name: httpd
+    state: restarted
+  when: ansible_os_family == "RedHat"

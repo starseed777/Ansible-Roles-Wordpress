@@ -1,0 +1,6 @@
+---
+- name: setup-apache
+  block:
+  - include_tasks: 1-redhat.yml
+  - include_tasks: 2-debian.yml
+  - include_tasks: 3-index.yml

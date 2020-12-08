@@ -1,0 +1,22 @@
+
+- name: Install apache2 package
+  apt:
+    name: apache2
+    state: present
+  when: ansible_os_family == "Debian"
+  tags: install_apache2
+
+- name: Start apache2 service
+  service:
+    name: apache2
+    state: started
+  when: ansible_os_family == "Debian"
+  tags: start_apache2
+
+- name: Change default port ubuntu to {{ custom_port }}
+  lineinfile:
+    path: /etc/apache2/ports.conf
+    regexp: '^Listen'
+    insertafter: "#/etc/apache2/sites-enabled/000-default.conf"
+    line: Listen {{ custom_port }}
+  when: ansible_os_family == "Debian"

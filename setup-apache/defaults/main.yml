@@ -1,0 +1,3 @@
+---
+# defaults file for setup-apache
+custom_port: 80
