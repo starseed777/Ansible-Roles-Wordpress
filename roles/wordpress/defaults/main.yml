@@ -1,0 +1,4 @@
+---
+# defaults file for wordpress
+
+apache2_conf: /etc/apache2/sites-enabled/000-default.conf
