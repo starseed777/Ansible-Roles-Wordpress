@@ -8,7 +8,7 @@ This is full documentation of debugging our ansible roles, links used for soluti
 - Next I went into the roles directory and changed the playbook.yml by adding "become: true" + deleting the python2 install task
 - The reason I deleted the task is because our ubuntu target server already has python3 installed and when doing this the playbook sucessfully passes
 - I then ran the playbook.yml in the cli with this command: ansible-playbook playbook.yml -u ansadmin -K (this prompts for password after)
-- The playbook passes, (refer to screenshots)
+- The playbook passes
 - I then manually go into the ubuntu target server and cd into /var/www/wordpress and edit wp-config.php and add the database credentials because it threw a db connection error
 - Next I re run the playbook.yml and refresh the page in my browser that has the ubuntu public ip and wordpress index page is there
 
