@@ -1,6 +1,5 @@
 This is full documentation of debugging our ansible roles, links used for solution:
 - https://www.wpbeginner.com/beginners-guide/how-to-edit-wp-config-php-file-in-wordpress/
-- https://stackoverflow.com/questions/9146320/install-python-mysqldb-to-python3-not-python
 - https://dotlayer.com/how-to-use-an-ansible-playbook-to-install-wordpress/
 
 - first I went into apache-setup/defaults/main.yml and changed our custom_port to 80 
