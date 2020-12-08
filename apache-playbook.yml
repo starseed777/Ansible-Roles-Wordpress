@@ -1,0 +1,9 @@
+---
+- name: Run setup-apache role
+  hosts: all
+  become: true
+  tasks: 
+  - include_role:
+      name: setup-apache
+  
+
