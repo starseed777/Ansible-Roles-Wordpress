@@ -3,6 +3,17 @@
   gather_facts: False
   become: true
 
+  tasks:
+  - name: copy wp-config file with credentials to target servers
+    copy:
+      src: /opt/ansible/Ansible-Roles-Wordpress/roles/wp-config.php
+      dest: /var/www/wordpress/wp-config.php
+      owner: ansadmin
+      group: ansadmin 
+      mode: 0644
+
+
+
   roles:
     - server
     - php
